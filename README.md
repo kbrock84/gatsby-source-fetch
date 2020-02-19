@@ -1,6 +1,6 @@
 # gatsby-source-fetch
 
-A simple Gatsbyjs data fetching plugin to leverage the power of axios [axios](https://github.com/axios/axios)
+A simple Gatsbyjs data fetching plugin to leverage the power of [axios](https://github.com/axios/axios)
 
 ## Install
 
