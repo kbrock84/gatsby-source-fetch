@@ -16,10 +16,10 @@ module.exports = {
 			resolve: `gatsby-source-fetch`,
 			options: {
 				// required - root node name
-				name: `html`,
+				name: `footer`,
 
 				// required - unique name to query data
-				type: `footer`,
+				type: `html`,
 
 				// required (unless overridden in axiosConfig) - url for endpoint
 				url: `https://www.some-domain.com/common-html/header.html`,
@@ -27,7 +27,7 @@ module.exports = {
 				// optional - provide method (defaults to get)
 				method: `get`,
 
-				// optional completely override axios config
+				// optional - completely override axios config
 				// see https://github.com/axios/axios#request-config
 				axiosConfig: {
 					headers: { "Content-Type": "text/html" },
@@ -55,4 +55,16 @@ module.exports = {
 		},
 	],
 };
+```
+
+## graphql
+
+```javascript
+const { header } = useStaticQuery(graphql`
+	{
+		footer {
+			html
+		}
+	}
+`);
 ```
