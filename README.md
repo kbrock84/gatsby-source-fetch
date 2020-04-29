@@ -30,7 +30,7 @@ module.exports = {
 				// optional - completely override axios config
 				// see https://github.com/axios/axios#request-config
 				axiosConfig: {
-					headers: { "Content-Type": "text/html" },
+					headers: { Accept: "text/html" },
 				},
 			},
 		},
@@ -43,7 +43,7 @@ module.exports = {
 				type: `icon`,
 				url: `https://www.some-domain.com/icons/favicon.ico`,
 				axiosConfig: {
-					headers: { "Content-Type": "image/x-icon" },
+					headers: { Accept: "image/x-icon" },
 				},
 
 				// optional - if saveTo is defined it will save the data fetched to a file
