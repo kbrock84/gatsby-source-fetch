@@ -60,7 +60,7 @@ module.exports = {
 ## graphql
 
 ```javascript
-const { header } = useStaticQuery(graphql`
+const { footer } = useStaticQuery(graphql`
 	{
 		footer {
 			html
