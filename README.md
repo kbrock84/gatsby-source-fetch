@@ -53,6 +53,28 @@ module.exports = {
 				createNodes: false,
 			},
 		},
+
+		// use a function instead of string for the url (thanks @michaelpumo)
+		{
+			resolve: `gatsby-source-fetch`
+			options: {
+				name: `brands`,
+				type: `brands`,
+
+				url: async () => {
+					const api = await Prismic.getApi("https://my-website.prismic.io/api/v2")
+					const brands = await api.getSingle("brands")
+					const { url } = brands.data.summary
+					return url
+				},
+				method: `get`,
+				axiosConfig: {
+				headers: { Accept: "text/csv" },
+				},
+				saveTo: `${__dirname}/src/data/brands-summary.csv`,
+				createNodes: false,
+			},
+		},
 	],
 };
 ```
