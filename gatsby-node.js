@@ -15,10 +15,15 @@ exports.sourceNodes = async (nodeActions, configOptions) => {
 	const method =
 		configOptions.method === undefined ? "get" : configOptions.method;
 
+	const url =
+		configOptions.url instanceof Function
+			? await configOptions.url()
+			: configOptions.url;
+
 	axios({
 		httpsAgent: new https.Agent({ rejectUnauthorized: false }),
 		method: method.toLowerCase(),
-		url: configOptions.url,
+		url: url,
 		responseType: configOptions.saveTo ? "stream" : undefined,
 		...configOptions.axiosConfig,
 	}).then(res => {
