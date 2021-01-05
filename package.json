@@ -22,7 +22,7 @@
 		"url": "https://github.com/kbrock84/gatsby-source-fetch"
 	},
 	"dependencies": {
-		"axios": "^0.19.0",
+		"axios": "^0.21.1",
 		"uuid": "^7.0.2"
 	}
 }
